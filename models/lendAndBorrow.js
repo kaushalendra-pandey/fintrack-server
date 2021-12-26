@@ -19,6 +19,10 @@ const lendAndBorrowSchema = mongoose.Schema({
     settled: {
         type: Boolean,
         default: false
+    },
+    amount: {
+        type:Number,
+        required:true
     }
 })
 

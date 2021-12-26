@@ -4,10 +4,11 @@ const TransactionType = require("../enums/lendAndBorrow")
 module.exports.addLendAndBorrow = async(req,res) => {
     try {
         const user_id = req.user
-        const {type,name} = req?.body
+        const {type,name,amount} = req?.body
         const transaction = await lendAndBorrowSchema.create({
             user_id,
             name,
+            amount,
             type: type === "LEND" ? TransactionType.lend : TransactionType.borrow
 
         })
